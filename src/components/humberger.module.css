@@ -1,5 +1,5 @@
-div{
-  left:100px;
-  width: 150px;
-  height: px;
+.Humburger {
+  display: flex;
+  margin-left: 10%;
+  width: 30%;
 }
