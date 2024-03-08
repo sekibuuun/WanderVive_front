@@ -5,7 +5,7 @@ export const TopPage = () => {
 
   return (
     <body>
-      <h3>[日時]、近くでできる演奏</h3>
+      <h3>[date]、近くでできる演奏</h3>
     </body>
   );
 };
