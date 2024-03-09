@@ -28,7 +28,7 @@ function Hamburger() {
         <MenuButton as={IconButton} aria-label="Options" icon={<HamburgerIcon />} variant="outline" />
         <MenuList>
 
-          <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
+          <MenuItem icon={<RepeatIcon />} command="">
             Topへ
           </MenuItem>
 
