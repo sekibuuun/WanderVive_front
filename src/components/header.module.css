@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  /* margin: left 20%; */
+}
+
+.headerTitle {
+  font-size: 22px;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
