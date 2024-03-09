@@ -1,4 +1,4 @@
-import style from './header.module.css';
+import style from '../styles/header.module.scss';
 import Hamburger from './hamburger';
 
 function Header() {
