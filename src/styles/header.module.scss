@@ -1,11 +1,13 @@
+@import './reset.scss';
+
 .header {
   display: flex;
   width: 100%;
   padding: 8px;
   display: flex;
   align-items: center;
-  background-color: #43766C;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #fef7ff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   /* margin: left 20%; */
 }
 
@@ -14,6 +16,4 @@
   width: 100%;
   text-align: center;
   color: black;
-
 }
-
