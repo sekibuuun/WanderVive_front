@@ -2,6 +2,7 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import { useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
+// import { BandCard } from './card box/band_card_lists';
 
 const TopPage = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -13,6 +14,7 @@ const TopPage = () => {
       </h3>
       <h3>検索日時と範囲を指定</h3>
       <DatePicker closeOnScroll={true} showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
+      {/* <BandCard /> */}
     </>
   );
 };
