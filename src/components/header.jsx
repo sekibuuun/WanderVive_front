@@ -1,10 +1,11 @@
 import style from './header.module.css';
-import Hamburger from './humberger';
+import Hamburger from './hamburger';
+
 function Header() {
   return (
     <div className={style.header}>
       <Hamburger />
-      <h1 className={style.headerTitle}>WanderView</h1>
+      <h1 className={style.headerTitle}>WanderVive</h1>
     </div>
   );
 }
