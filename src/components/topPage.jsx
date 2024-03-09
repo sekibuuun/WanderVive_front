@@ -2,7 +2,8 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import { useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Heading, Text, Center, Square, Circle } from '@chakra-ui/react';
+import { Heading, Center, VStack } from '@chakra-ui/react';
+import { ArtistCard } from './artistCard';
 
 const TopPage = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -23,6 +24,11 @@ const TopPage = () => {
       <Center h="100%">
         <DatePicker closeOnScroll={true} showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
       </Center>
+      <VStack>
+        <ArtistCard />
+        <ArtistCard />
+        <ArtistCard />
+      </VStack>
     </>
   );
 };

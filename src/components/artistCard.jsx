@@ -1,19 +1,29 @@
 import sampleBandImg from '../images/sampleband.png';
-import styles from '../styles/artistCard.module.scss';
+import { Card, CardBody, Image, Stack, Text, Divider, Center } from '@chakra-ui/react';
 
 const ArtistCard = () => {
   return (
-    <div className={styles.artistCard}>
-      <img src={sampleBandImg} alt="band" />
-      <div className={styles.strContainer}>
-        <div className={styles.bandInfo}>
-          <p>ジャンル、何m</p>
-        </div>
-        <div className={styles.bandName}>
-          <p>バンド名</p>
-        </div>
-      </div>
-    </div>
+    <Card maxW="sm">
+      <CardBody>
+        <Center>
+          <Image
+            src={sampleBandImg}
+            alt="bandImd"
+            borderRadius="lg"
+            boxSize={200}
+            objectFit="cover"
+            objectPosition="align"
+          />
+        </Center>
+        <Divider my="6" />
+        <Stack mt="6" spacing="3">
+          <Text color="gray">ジャンル</Text>
+          <Text color="black" fontSize="2xl" fontWeight="bold">
+            バンド名
+          </Text>
+        </Stack>
+      </CardBody>
+    </Card>
   );
 };
 

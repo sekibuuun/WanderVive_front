@@ -1,4 +1,5 @@
 import { Menu, MenuButton, MenuList, MenuItem, IconButton } from '@chakra-ui/react';
+import styles from '../styles/hamburger.module.scss';
 
 import { HamburgerIcon, RepeatIcon } from '@chakra-ui/icons';
 
@@ -6,10 +7,16 @@ function Hamburger() {
   return (
     <>
       <Menu>
-        <MenuButton as={IconButton} aria-label="Options" icon={<HamburgerIcon />} variant="outline" />
+        <MenuButton
+          className={styles.hamburger}
+          as={IconButton}
+          aria-label="Options"
+          icon={<HamburgerIcon />}
+          variant="outline"
+        />
         <MenuList>
           <MenuItem icon={<RepeatIcon />} command="">
-            Topへ
+            <a className={styles.lemon}>TOPへ</a>
           </MenuItem>
         </MenuList>
       </Menu>
