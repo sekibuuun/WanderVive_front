@@ -33,4 +33,4 @@ const TopPage = () => {
   );
 };
 
-export { TopPage };
+export default TopPage;

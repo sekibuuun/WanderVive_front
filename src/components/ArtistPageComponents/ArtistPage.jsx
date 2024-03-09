@@ -9,4 +9,4 @@ const ArtistPage = () => {
   );
 };
 
-export { ArtistPage };
+export default ArtistPage;
