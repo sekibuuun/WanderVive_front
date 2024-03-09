@@ -4,7 +4,7 @@ function Header() {
   return (
     <div className={style.header}>
       <Hamburger />
-      <h1 className={style.headerTitle}>taitoru</h1>
+      <h1 className={style.headerTitle}>WanderView</h1>
     </div>
   );
 }
