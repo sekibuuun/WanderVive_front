@@ -4,12 +4,16 @@
   padding: 8px;
   display: flex;
   align-items: center;
+  background-color: #43766C;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   /* margin: left 20%; */
 }
 
 .headerTitle {
-  font-size: 22px;
+  font-size: 30px;
   width: 100%;
   text-align: center;
   color: black;
+
 }
+
