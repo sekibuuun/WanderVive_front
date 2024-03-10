@@ -30,7 +30,7 @@ const TopPage = () => {
   useEffect(() => {
     const getNearbyBands = async () => {
       // http://localhost:8080/nearbyEvent?longitude=135.7545413&latitude=35.0237056&date=2024-03-20&maxDist=100000
-      const url = `/api/nearbyEvent?longitude=${userLocation.longitude}&latitude=${userLocation.latitude}&date=${formatDate(selectedDate)}&maxDist=${selectedDistance}`;
+      const url = `http://localhost:8080/nearbyEvent?longitude=${userLocation.longitude}&latitude=${userLocation.latitude}&date=${formatDate(selectedDate)}&maxDist=${selectedDistance}`;
       console.log('URL:', url);
       const response = await fetch(url);
       const data = await response.json();
