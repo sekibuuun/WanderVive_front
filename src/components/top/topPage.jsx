@@ -8,7 +8,7 @@ import { ArtistCard } from '../artistCard';
 const TopPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedDistance, setSelectedDistance] = useState(100000);
-  const [artistData, setArtistData] = useState([]);
+  const [data, setData] = useState([]);
   const userLocation = useCurrentLocation();
 
   const formatDate = (date) => {
@@ -30,13 +30,13 @@ const TopPage = () => {
   useEffect(() => {
     const getNearbyBands = async () => {
       // http://localhost:8080/nearbyEvent?longitude=135.7545413&latitude=35.0237056&date=2024-03-20&maxDist=100000
-      const url = `/api/nearbyEvent?longitude=${userLocation.longitude}&latitude=${userLocation.latitude}&date=${formatDate(selectedDate)}&maxDist=${selectedDistance}`;
+      const url = `http://localhost:8080/nearbyEvent?longitude=${userLocation.longitude}&latitude=${userLocation.latitude}&date=${formatDate(selectedDate)}&maxDist=${selectedDistance}`;
       console.log('URL:', url);
       const response = await fetch(url);
       const data = await response.json();
       console.log('Nearby Bands:', data);
       console.log(typeof data);
-      setArtistData(data);
+      setData(data);
     };
     if (userLocation) {
       getNearbyBands();
@@ -48,7 +48,7 @@ const TopPage = () => {
       {selectedDate && <Subtitle date={selectedDate} distance={selectedDistance} />}
       <Calendar onDateChange={handleDateChange} />
       <SelectDistance onSelectDistanceChange={handleDistanceChange} />
-      <ArtistCard artistData={artistData} />
+      <ArtistCard data={data} />
     </div>
   );
 };

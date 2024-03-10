@@ -1,15 +1,23 @@
 import Header from './components/header';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import ArtistPage from './components/artistPage/ArtistPage';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+  BrowserRouter,
+  Routes,
+} from 'react-router-dom';
+import ArtistPage from './components/artist/artistPage';
+import { TopPage } from './components/top/topPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <ArtistPage />,
+    element: <TopPage />,
     children: [
       {
         path: 'artist',
-        element: <ArtistPage longitude={135.0} latitude={35.0} />,
+        element: <ArtistPage />,
       },
     ],
   },
@@ -19,7 +27,12 @@ function App() {
   return (
     <>
       <Header />
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<TopPage />} />
+          <Route path="artist" element={<ArtistPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

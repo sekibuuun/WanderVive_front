@@ -7,12 +7,11 @@ const containerStyle = {
   height: '300px',
 };
 
-const center = {
-  lat: 35.0237056,
-  lng: 135.7545413,
-};
-
-const DisplayMap = () => {
+const DisplayMap = (props) => {
+  const center = {
+    lat: props.latitude,
+    lng: props.longitude,
+  };
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
@@ -24,7 +23,6 @@ const DisplayMap = () => {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
-
     setMap(map);
   }, []);
 
