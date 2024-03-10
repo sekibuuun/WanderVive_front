@@ -27,9 +27,6 @@ const ArtistCard = ({ data }) => {
                     </Center>
                     <Divider my="6" />
                     <Stack mt="6" spacing="3">
-                      <Text color="gray">{band.gerne}</Text>
-                      <Divider my="3" />
-
                       <Stack spacing="2" mx={2}>
                         <Text color="gray" fontSize="sm">
                           {band.gerne}
