@@ -1,27 +1,7 @@
 import Header from './components/header';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-  BrowserRouter,
-  Routes,
-} from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import ArtistPage from './components/artist/artistPage';
 import { TopPage } from './components/top/topPage';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <TopPage />,
-    children: [
-      {
-        path: 'artist',
-        element: <ArtistPage />,
-      },
-    ],
-  },
-]);
 
 function App() {
   return (
@@ -30,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<TopPage />} />
-          <Route path="artist" element={<ArtistPage />} />
+          <Route path="/bands/:artist" element={<ArtistPage />} />
         </Routes>
       </BrowserRouter>
     </>
