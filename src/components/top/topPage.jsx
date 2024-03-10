@@ -3,7 +3,7 @@ import { Calendar } from './calendar';
 import { SelectDistance } from './selectDistance';
 import { Subtitle } from './subtitle';
 import { useCurrentLocation } from '../hooks/useCurrentLocation';
-import { ArtistCard } from '../artistCard';
+import { ArtistCardList } from '../artistCardList';
 
 const TopPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -49,7 +49,7 @@ const TopPage = () => {
       <Calendar onDateChange={handleDateChange} />
 
       <SelectDistance onSelectDistanceChange={handleDistanceChange} />
-      <ArtistCard data={data} />
+      <ArtistCardList data={data} />
     </div>
   );
 };
