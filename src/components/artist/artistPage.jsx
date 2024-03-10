@@ -1,4 +1,3 @@
-import React from 'react';
 import { DisplayMap } from './displayMap';
 import { useLocation } from 'react-router-dom';
 import ArtistLink from './artistLink';
@@ -10,8 +9,6 @@ import { Text } from '@chakra-ui/react';
 const ArtistPage = () => {
   const location = useLocation();
   const { event, bandId } = location.state;
-  console.log(bandId);
-  console.log(event);
   const bands = event.bands;
   var selectedBand;
   const otherBands = [];

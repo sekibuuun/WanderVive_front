@@ -1,7 +1,5 @@
-import React from 'react';
 import { Button, List, ListItem, Center } from '@chakra-ui/react';
 const ArtistLink = ({ band }) => {
-  console.log(band);
   return band.tunecore || band.twitter || band.instagram || band.youtube || band.homePage ? (
     <Center>
       <List style={{ padding: '16px' }} display={'flex'} gap={2}>

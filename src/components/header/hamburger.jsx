@@ -1,8 +1,4 @@
 import {
-  // Menu,
-  // MenuButton,
-  // MenuList,
-  // MenuItem,
   IconButton,
   useDisclosure,
   Drawer,
@@ -13,7 +9,7 @@ import {
   Button,
   DrawerCloseButton,
 } from '@chakra-ui/react';
-import styles from '../styles/hamburger.module.scss';
+import styles from '../../styles/hamburger.module.scss';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 function Hamburger() {
@@ -37,26 +33,12 @@ function Hamburger() {
             Menu
           </DrawerHeader>
           <DrawerBody>
-            <a className={styles.lemon} href="/">
+            <a href="/" className={styles.lemon}>
               TOPへ
             </a>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-      {/* <Menu>
-        <MenuButton
-          className={styles.hamburger}
-          as={IconButton}
-          aria-label="Options"
-          icon={<HamburgerIcon />}
-          variant="outline"
-        />
-        <MenuList>
-          <MenuItem icon={<RepeatIcon />} command="">
-            <a className={styles.lemon}>TOPへ</a>
-          </MenuItem>
-        </MenuList>
-      </Menu> */}
     </>
   );
 }

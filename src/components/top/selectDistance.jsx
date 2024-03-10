@@ -1,18 +1,13 @@
-import { useState } from 'react';
 import { Tabs, TabList, Tab, Flex } from '@chakra-ui/react';
+import { useSelectedDistance } from '../hooks/useSelectedDistance';
 
 const SelectDistance = ({ onSelectDistanceChange }) => {
-  const [selectedDistance, setSelectedDistance] = useState(500);
+  const { selectedDistance, handleTabChange } = useSelectedDistance(onSelectDistanceChange);
   const meters = [50, 100, 500, 1000, 2000];
-
-  const handleTabChange = (distance) => {
-    setSelectedDistance(distance);
-    onSelectDistanceChange(distance);
-  };
 
   return (
     <>
-      <Flex justify="center" align="center">
+      <Flex justify="center" align="center" my={3}>
         <Tabs
           variant="soft-rounded"
           colorScheme="purple"
