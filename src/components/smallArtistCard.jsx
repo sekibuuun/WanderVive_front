@@ -1,21 +1,23 @@
 import sampleBandImg from '../images/sampleband.png';
-import { Card, CardBody, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Card, CardBody, Image, Stack, Text } from '@chakra-ui/react';
 
 
 const SmallArtistCard = () => {
   return (
-    <Card backgroundColor={'purple'} direction={'row'} overflow="hidden" variant="outline">
+    <Card backgroundColor={'purple.400'} justifyContent={'center'} direction={'row'} overflow="hidden" variant="outline">
       <Image objectFit="contain" maxW={100} src={sampleBandImg} alt="band" />
 
       <Stack>
         <CardBody backgro>
-          <Stack spacing="3">
+          <Stack spacing="4">
+            <Box>
             <Text color="white" fontSize="ms" fontWeight="bold">
               バンド名
             </Text>
             <Text color="white" fontSize="sm">
               ジャンル
             </Text>
+           </Box>
           </Stack>
         </CardBody>
       </Stack>
