@@ -1,17 +1,28 @@
 import React from 'react';
-
+import { Card, Text, Divider, Heading, Link } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 const EventInfo = (props) => {
   return (
     <>
-      <h2>イベント情報</h2>
-      <ul>
-        <li>イベント名:{props.event.eventName}</li>
-        <li>ライブハウス名:{props.event.livehouseName}</li>
-        <li>開店時間:{props.event.openTime}</li>
-        <li>開演時間:{props.event.startTime}</li>
-        <li>チケット料金:{props.event.fee}円</li>
-        {props.event.homePage ? <li>ライブハウスHP:{props.event.homePage}</li> : null}
-      </ul>
+      <Card p={8} variant={'outline'}>
+        <Heading size="md">
+          {props.event.eventName} @{props.event.livehouseName}
+        </Heading>
+        <Divider />
+        <span>¥{props.event.fee}</span>
+        <Divider />
+        <div>
+          <Text>
+            open:{props.event.startTime} start:{props.event.openTime}
+          </Text>
+        </div>
+        {props.event.homePage ? (
+          <Link href={props.event.homePage} isExternal textAlign="end">
+            HP
+            <ExternalLinkIcon mx="2px" />
+          </Link>
+        ) : null}
+      </Card>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { Card, CardBody, Image, Stack, Text, Divider, Center } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-const ArtistCard = ({ data }) => {
+const ArtistCardList = ({ data }) => {
   const cards = [];
 
   if (data.contents && data.contents.length > 0) {
@@ -9,21 +9,23 @@ const ArtistCard = ({ data }) => {
       if (event.bands && event.bands.length > 0) {
         event.bands.forEach((band) => {
           cards.push(
-            <Link to="/artist" state={{ event: event, bandId: band.bandId }}>
+            <Link to={`/bands/${band.bandId}`} state={{ event: event, bandId: band.bandId }}>
               <Center key={band.bandId} padding={5}>
                 <Card w="100%" padding={3} border="1px solid" borderColor="gray.400">
                   <CardBody>
                     <Center>
-                      <Image
-                        src={band.image}
-                        alt="bandImg"
-                        borderRadius="lg"
-                        boxSize={200}
-                        w="100%"
-                        h="auto"
-                        objectFit="cover"
-                        objectPosition="align"
-                      />
+                      {band.image ? (
+                        <Image
+                          src={band.image}
+                          alt="bandImg"
+                          borderRadius="lg"
+                          boxSize={200}
+                          w="100%"
+                          h="auto"
+                          objectFit="cover"
+                          objectPosition="align"
+                        />
+                      ) : null}
                     </Center>
                     <Divider my="6" />
                     <Stack mt="6" spacing="3">
@@ -49,4 +51,4 @@ const ArtistCard = ({ data }) => {
   return cards;
 };
 
-export { ArtistCard };
+export { ArtistCardList };
