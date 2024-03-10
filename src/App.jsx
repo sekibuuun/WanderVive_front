@@ -6,11 +6,11 @@ import ArtistPage from './components/ArtistPageComponents/ArtistPage';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <TopPage />,
+    element: <ArtistPage />,
     children: [
       {
-        path: '/artist',
-        element: <ArtistPage />,
+        path: 'artist',
+        element: <ArtistPage longitude={135.0} latitude={35.0} />,
       },
     ],
   },

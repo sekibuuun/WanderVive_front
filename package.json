@@ -14,6 +14,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.0.8",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
