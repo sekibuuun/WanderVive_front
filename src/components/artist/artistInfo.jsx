@@ -1,4 +1,3 @@
-import React from 'react';
 import ArtistLink from './artistLink';
 
 const ArtistInfo = (props) => {

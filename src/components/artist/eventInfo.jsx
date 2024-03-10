@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, Text, Divider, Heading, Link } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 const EventInfo = (props) => {
@@ -13,7 +12,7 @@ const EventInfo = (props) => {
         <Divider />
         <div>
           <Text>
-            open:{props.event.startTime} start:{props.event.openTime}
+            open:{props.event.openTime} start:{props.event.startTime}
           </Text>
         </div>
         {props.event.homePage ? (

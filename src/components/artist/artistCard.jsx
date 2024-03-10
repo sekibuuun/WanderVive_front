@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardBody, Image, Stack, Text, Divider, Center } from '@chakra-ui/react';
 
 const ArtistCard = ({ band = {} }) => {

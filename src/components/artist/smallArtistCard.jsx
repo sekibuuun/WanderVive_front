@@ -21,22 +21,6 @@ const SmallArtistCard = ({ band }) => {
         </Stack>
       </Card>
     </Box>
-    // <Card  direction={'row'} overflow ="hidden" variant="outline" rounded="full">
-    //   <Image objectFit="contain" maxW={100} src={sampleBandImg} alt="band" />
-
-    //   <Stack >
-    //     <CardBody >
-    //       <Stack spacing="3">
-    //         <Text color="black" fontSize="ms" fontWeight="bold">
-    //           バンド名
-    //         </Text>
-    //         <Text color="gray" fontSize="sm">
-    //           ジャンル
-    //         </Text>
-    //       </Stack>
-    //     </CardBody>
-    //   </Stack>
-    // </Card>
   );
 };
 
