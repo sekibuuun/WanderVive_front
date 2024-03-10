@@ -7,12 +7,11 @@ const containerStyle = {
   height: '300px',
 };
 
-const center = {
-  lat: 35.0237056,
-  lng: 135.7545413,
-};
-
-const DisplayMap = () => {
+const DisplayMap = (props) => {
+  const center = {
+    lat: props.latitude,
+    lng: props.longitude,
+  };
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
@@ -22,9 +21,9 @@ const DisplayMap = () => {
 
   const onLoad = React.useCallback(function callback(map) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-
+    // const bounds = new window.google.maps.LatLngBounds(center);
+    // map.fitBounds(bounds);
+    map.setZoom(15);
     setMap(map);
   }, []);
 
@@ -34,7 +33,7 @@ const DisplayMap = () => {
 
   return isLoaded ? (
     <Center mx={10}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16} onLoad={onLoad} onUnmount={onUnmount}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={1} onLoad={onLoad} onUnmount={onUnmount}>
         {/* Child components, such as markers, info windows, etc. */}
         <MarkerF position={center} />
         <></>
