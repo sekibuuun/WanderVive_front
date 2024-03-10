@@ -1,6 +1,5 @@
 import Header from './components/header';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import TopPage from './components/topPage';
 import ArtistPage from './components/artistPage/ArtistPage';
 
 const router = createBrowserRouter([
