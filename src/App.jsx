@@ -1,4 +1,4 @@
-import Header from './components/header';
+import Header from './components/header/header';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import ArtistPage from './components/artist/artistPage';
 import { TopPage } from './components/top/topPage';
