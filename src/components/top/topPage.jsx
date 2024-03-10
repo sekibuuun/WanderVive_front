@@ -3,14 +3,16 @@ import { Calendar } from './calendar';
 import { SelectDistance } from './selectDistance';
 import { Subtitle } from './subtitle';
 import { useCurrentLocation } from '../hooks/useCurrentLocation';
+import { ArtistCard } from '../artistCard';
 
 const TopPage = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedDistance, setSelectedDistance] = useState(100000);
+  const [artistData, setArtistData] = useState([]);
   const userLocation = useCurrentLocation();
 
   const formatDate = (date) => {
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    return `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
   };
 
   const handleDateChange = (date) => {
@@ -33,6 +35,8 @@ const TopPage = () => {
       const response = await fetch(url);
       const data = await response.json();
       console.log('Nearby Bands:', data);
+      console.log(typeof data);
+      setArtistData(data);
     };
     if (userLocation) {
       getNearbyBands();
@@ -44,6 +48,7 @@ const TopPage = () => {
       {selectedDate && <Subtitle date={selectedDate} distance={selectedDistance} />}
       <Calendar onDateChange={handleDateChange} />
       <SelectDistance onSelectDistanceChange={handleDistanceChange} />
+      <ArtistCard artistData={artistData} />
     </div>
   );
 };
