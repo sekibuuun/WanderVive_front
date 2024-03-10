@@ -1,5 +1,5 @@
 import React from 'react';
-import DisplayMap from './displayMap';
+import { DisplayMap } from './displayMap';
 
 const ArtistPage = (props) => {
   return (

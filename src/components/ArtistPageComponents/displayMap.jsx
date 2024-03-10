@@ -1,36 +1,46 @@
-import { React } from 'react';
-import { Wrapper, Map, Marker, Status } from '@googlemaps/react-wrapper';
-import { useMap } from '../hooks/useMap';
-import { Wrap } from '@chakra-ui/react';
+import React from 'react';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-const VIEW_STYLE = {
-  width: '100%',
-  aspectRatio: '16 / 9',
+const containerStyle = {
+  width: '400px',
+  height: '400px',
 };
 
-const Content = (props) => {
-  const option = {
-    center: props.position,
-    zoom: 10,
-  };
-  const ref = useMap(option);
-  return <div style={VIEW_STYLE} ref={ref} />;
+const center = {
+  lat: -3.745,
+  lng: -38.523,
 };
 
-const DisplayMap = (props) => {
-  const position = { lat: 35.6973225, lng: 139.8265658 };
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-  const render = (status) => {
-    return <h1>{status}</h1>;
-  };
-  return (
-    <>
-      <h3>演奏場所の表示</h3>
-      <Wrapper apiKey={apiKey} render={render}>
-        <Content position={position} />
-      </Wrapper>
-    </>
+const DisplayMap = () => {
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+  });
+
+  console.log(import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
+
+  const [map, setMap] = React.useState(null);
+
+  const onLoad = React.useCallback(function callback(map) {
+    // This is just an example of getting and using the map instance!!! don't just blindly copy!
+    const bounds = new window.google.maps.LatLngBounds(center);
+    map.fitBounds(bounds);
+
+    setMap(map);
+  }, []);
+
+  const onUnmount = React.useCallback(function callback(map) {
+    setMap(null);
+  }, []);
+
+  return isLoaded ? (
+    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
+      {/* Child components, such as markers, info windows, etc. */}
+      <></>
+    </GoogleMap>
+  ) : (
+    <></>
   );
 };
 
-export default DisplayMap;
+export { DisplayMap };
