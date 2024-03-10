@@ -1,34 +1,30 @@
 import { useState } from 'react';
-import { Tabs, TabList, Tab, Flex, TabPanel, TabPanels } from '@chakra-ui/react';
+import { Tabs, TabList, Tab, Flex } from '@chakra-ui/react';
 
 const SelectDistance = ({ onSelectDistanceChange }) => {
   const [selectedDistance, setSelectedDistance] = useState(50);
   const meters = [50, 100, 500, 1000, 2000];
-  const handleButtonClick = (distance) => {
+
+  const handleTabChange = (distance) => {
     setSelectedDistance(distance);
     onSelectDistanceChange(distance);
   };
 
   return (
     <>
-      <Flex h={100} justify="center">
-        <Tabs variant="soft-rounded" colorScheme="purple" width={395}>
-          <TabList>
+      <Flex justify="center" align="center">
+        <Tabs
+          variant="soft-rounded"
+          colorScheme="purple"
+          width={395}
+          index={meters.indexOf(selectedDistance)}
+          onChange={(index) => handleTabChange(meters[index])}
+        >
+          <TabList justifyContent={'center'}>
             {meters.map((meter) => (
-              <Tab>
-                <button key={meter} onClick={() => handleButtonClick(meter)}>
-                  {meter}
-                </button>
-              </Tab>
+              <Tab key={meter}>{meter}</Tab>
             ))}
           </TabList>
-          <TabPanels>
-            {meters.map((meter) => (
-              <TabPanel>
-                <p>{meter}m</p>
-              </TabPanel>
-            ))}
-          </TabPanels>
         </Tabs>
       </Flex>
     </>
