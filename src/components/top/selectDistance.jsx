@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Tabs, TabList, Tab, Flex, TabPanel, TabPanels } from '@chakra-ui/react';
 
 const SelectDistance = ({ onSelectDistanceChange }) => {
   const [selectedDistance, setSelectedDistance] = useState(50);
@@ -9,13 +10,28 @@ const SelectDistance = ({ onSelectDistanceChange }) => {
   };
 
   return (
-    <div>
-      {meters.map((meter) => (
-        <button key={meter} onClick={() => handleButtonClick(meter)}>
-          {meter}
-        </button>
-      ))}
-    </div>
+    <>
+      <Flex h={100} justify="center">
+        <Tabs variant="soft-rounded" colorScheme="purple" width={395}>
+          <TabList>
+            {meters.map((meter) => (
+              <Tab>
+                <button key={meter} onClick={() => handleButtonClick(meter)}>
+                  {meter}
+                </button>
+              </Tab>
+            ))}
+          </TabList>
+          <TabPanels>
+            {meters.map((meter) => (
+              <TabPanel>
+                <p>{meter}m</p>
+              </TabPanel>
+            ))}
+          </TabPanels>
+        </Tabs>
+      </Flex>
+    </>
   );
 };
 
