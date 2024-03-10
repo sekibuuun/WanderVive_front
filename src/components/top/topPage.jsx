@@ -47,6 +47,7 @@ const TopPage = () => {
     <div>
       {selectedDate && <Subtitle date={selectedDate} distance={selectedDistance} />}
       <Calendar onDateChange={handleDateChange} />
+
       <SelectDistance onSelectDistanceChange={handleDistanceChange} />
       <ArtistCard data={data} />
     </div>
