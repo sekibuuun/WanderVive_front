@@ -7,7 +7,7 @@ const Calendar = ({ onDateChange }) => {
   const [startDate, setStartDate] = useState(new Date());
 
   return (
-    <Center h="100%">
+    <Center h="100%" m={3}>
       <DatePicker
         closeOnScroll={true}
         showIcon

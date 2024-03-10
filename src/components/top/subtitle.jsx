@@ -1,15 +1,9 @@
-import { FormatDate } from './formatDate';
+import { FormatDate } from '../utils/formatDate';
+import { displayDistance } from '../utils/displayDistance';
 import { Center } from '@chakra-ui/react';
 import styles from '../../styles/subtitle.module.scss';
 
 const Subtitle = ({ date, distance }) => {
-  const displayDistance = (distance) => {
-    if (distance >= 1000) {
-      return `${distance / 1000}km`;
-    } else {
-      return `${distance}m`;
-    }
-  };
   return (
     <div>
       <Center className={styles.mozi} mt="6">
