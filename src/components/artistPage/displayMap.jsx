@@ -18,8 +18,6 @@ const DisplayMap = () => {
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
-  console.log(import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
-
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map) {
