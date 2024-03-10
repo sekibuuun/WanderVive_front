@@ -1,9 +1,11 @@
 import React from 'react';
 import { DisplayMap } from './displayMap';
-import ArtistInfo from './artistInfo';
 import { useLocation } from 'react-router-dom';
 import ArtistLink from './artistLink';
 import EventInfo from './eventInfo';
+import { ArtistCard } from './artistCard';
+import { SmallArtistCard } from './smallArtistCard';
+import { Text } from '@chakra-ui/react';
 
 const ArtistPage = () => {
   const location = useLocation();
@@ -22,11 +24,16 @@ const ArtistPage = () => {
   });
   return (
     <>
-      <ArtistInfo artist={selectedBand} />
-      <ArtistLink event={event} />
+      <ArtistCard band={selectedBand} />
       <EventInfo event={event} />
-      <h3>当日、出演するその他のミュージシャン</h3>
       <DisplayMap longitude={event.longitude} latitude={event.latitude} />
+      <ArtistLink band={selectedBand} />
+      <Text px={8} py={3} fontWeight="bold">
+        当日、出演するその他のバンド
+      </Text>
+      {otherBands.map((band) => (
+        <SmallArtistCard key={band} band={band} />
+      ))}
     </>
   );
 };
