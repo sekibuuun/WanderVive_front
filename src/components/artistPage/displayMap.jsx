@@ -1,9 +1,10 @@
 import React from 'react';
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
+import { Center } from '@chakra-ui/react';
 
 const containerStyle = {
-  width: '400px',
-  height: '400px',
+  width: '100%',
+  height: '300px',
 };
 
 const center = {
@@ -34,11 +35,13 @@ const DisplayMap = () => {
   }, []);
 
   return isLoaded ? (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
-      {/* Child components, such as markers, info windows, etc. */}
-      <MarkerF position={center} />
-      <></>
-    </GoogleMap>
+    <Center mx={10}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
+        {/* Child components, such as markers, info windows, etc. */}
+        <MarkerF position={center} />
+        <></>
+      </GoogleMap>
+    </Center>
   ) : (
     <></>
   );
