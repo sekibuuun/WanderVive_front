@@ -12,6 +12,7 @@ const Calendar = ({ onDateChange }) => {
         closeOnScroll={true}
         showIcon
         selected={startDate}
+        dateFormat="yyyy/MM/dd"
         onChange={(date) => {
           setStartDate(date);
           onDateChange(date);

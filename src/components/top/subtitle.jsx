@@ -1,4 +1,5 @@
 import { FormatDate } from './formatDate';
+import { Center } from '@chakra-ui/react';
 
 const Subtitle = ({ date, distance }) => {
   const displayDistance = (distance) => {
@@ -10,9 +11,13 @@ const Subtitle = ({ date, distance }) => {
   };
   return (
     <div>
-      <FormatDate date={date} />
-      <span>、{displayDistance(distance)}で聞ける演奏</span>
-      <p>検索日時と時間を指定</p>
+      <Center mt="6">
+        <FormatDate date={date} />
+        <span>、{displayDistance(distance)}で聞ける演奏</span>
+      </Center>
+      <Center>
+        <p>検索日時と時間を指定</p>
+      </Center>
     </div>
   );
 };
