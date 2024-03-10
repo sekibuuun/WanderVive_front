@@ -8,27 +8,32 @@ const ArtistCard = ({ artistData }) => {
       if (event.bands && event.bands.length > 0) {
         event.bands.forEach((band) => {
           cards.push(
-            <Card maxW="sm" key={band.bandId}>
-              <CardBody>
-                <Center>
-                  <Image
-                    src={band.image}
-                    alt="bandImg"
-                    borderRadius="lg"
-                    boxSize={200}
-                    objectFit="cover"
-                    objectPosition="align"
-                  />
-                </Center>
-                <Divider my="6" />
-                <Stack mt="6" spacing="3">
-                  <Text color="gray">{band.gerne}</Text>
-                  <Text color="black" fontSize="2xl" fontWeight="bold">
-                    {band.bandName}
-                  </Text>
-                </Stack>
-              </CardBody>
-            </Card>,
+            <Center key={band.bandId} padding={5}>
+              <Card w="100%" padding={3} border="1px solid" borderColor="gray.400">
+                <CardBody>
+                  <Center>
+                    <Image
+                      src={band.image}
+                      alt="bandImg"
+                      borderRadius="lg"
+                      w="100%"
+                      h="auto"
+                      objectFit="cover"
+                      objectPosition="align"
+                    />
+                  </Center>
+                  <Divider my="3" />
+                  <Stack spacing="2" mx={2}>
+                    <Text color="gray" fontSize="sm">
+                      {band.gerne}
+                    </Text>
+                    <Text color="black" fontSize="lg" fontWeight="bold">
+                      {band.bandName}
+                    </Text>
+                  </Stack>
+                </CardBody>
+              </Card>
+            </Center>,
           );
         });
       }
