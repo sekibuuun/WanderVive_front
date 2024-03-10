@@ -8,8 +8,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: 35.0237056,
+  lng: 135.7545413,
 };
 
 const DisplayMap = () => {
@@ -34,7 +34,7 @@ const DisplayMap = () => {
 
   return isLoaded ? (
     <Center mx={10}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10} onLoad={onLoad} onUnmount={onUnmount}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16} onLoad={onLoad} onUnmount={onUnmount}>
         {/* Child components, such as markers, info windows, etc. */}
         <MarkerF position={center} />
         <></>
