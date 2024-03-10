@@ -1,10 +1,11 @@
 import React from 'react';
+import { DisplayMap } from './displayMap';
 
-const ArtistPage = () => {
+const ArtistPage = (props) => {
   return (
     <>
-      <h3>演奏場所の表示</h3>
       <h3>当日、出演するその他のミュージシャン</h3>
+      <DisplayMap longitude={props.longitude} latitude={props.latitude} />
     </>
   );
 };
