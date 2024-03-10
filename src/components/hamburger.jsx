@@ -11,6 +11,7 @@ import {
   DrawerOverlay,
   DrawerHeader,
   Button,
+  DrawerCloseButton,
 } from '@chakra-ui/react';
 import styles from '../styles/hamburger.module.scss';
 import { HamburgerIcon } from '@chakra-ui/icons';
@@ -31,6 +32,7 @@ function Hamburger() {
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
+          <DrawerCloseButton />
           <DrawerHeader className={styles.lemon_header} borderBottomWidth="8px">
             Menu
           </DrawerHeader>
