@@ -7,7 +7,7 @@ const ArtistCard = ({ band = {} }) => {
         <Center>
           {band.image ? (
             <Image
-              src={band.image.replace('./', '/')}
+              src={'/images/' + band.bandName + '.png'}
               alt="bandImg"
               borderRadius="lg"
               boxSize={200}

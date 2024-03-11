@@ -13,7 +13,7 @@ const ArtistCardList = ({ data }) => {
                   <Center>
                     {band.image && (
                       <Image
-                        src={band.image}
+                        src={'/images/' + band.bandName + '.png'}
                         alt="bandImg"
                         borderRadius="lg"
                         boxSize={200}
