@@ -6,7 +6,11 @@ const ArtistCardList = ({ data }) => {
     <>
       {data.contents?.flatMap((event) =>
         event.bands?.map((band) => (
-          <Link key={band.bandId} to={`/bands/${band.bandId}`} state={{ event, bandId: band.bandId }}>
+          <Link
+            key={event.eventId + ':' + band.bandId}
+            to={`/bands/${band.bandId}`}
+            state={{ event, bandId: band.bandId }}
+          >
             <Center padding={5}>
               <Card w="100%" padding={3} border="1px solid" borderColor="gray.400">
                 <CardBody>
