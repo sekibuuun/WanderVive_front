@@ -4,7 +4,7 @@ import ArtistLink from './artistLink';
 import EventInfo from './eventInfo';
 import { ArtistCard } from './artistCard';
 import { SmallArtistCard } from './smallArtistCard';
-import { Text } from '@chakra-ui/react';
+import { Text, VStack } from '@chakra-ui/react';
 
 const ArtistPage = () => {
   const location = useLocation();
@@ -28,9 +28,11 @@ const ArtistPage = () => {
       <Text px={8} py={3} fontWeight="bold">
         当日、出演するその他のバンド
       </Text>
-      {otherBands.map((band) => (
-        <SmallArtistCard key={band} band={band} />
-      ))}
+      <VStack spacing={3}>
+        {otherBands.map((band) => (
+          <SmallArtistCard key={band.bandId} band={band} />
+        ))}
+      </VStack>
     </>
   );
 };
