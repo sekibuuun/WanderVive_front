@@ -4,7 +4,7 @@ const SmallArtistCard = ({ band }) => {
   return (
     <Box paddingX={8}>
       <Card backgroundColor={'purple.400'} direction={'row'} overflow="hidden" variant="outline" paddingX={3}>
-        <Image objectFit="contain" maxW={100} src={band.image.replace('./', '/')} alt="band" />
+        <Image objectFit="contain" maxW={100} src={'/images/' + band.bandName + '.png'} alt="band" />
         <Stack>
           <CardBody>
             <Stack spacing="4">
