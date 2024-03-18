@@ -1,8 +1,39 @@
-# React + Vite
+# WanderVive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 概要
 
-Currently, two official plugins are available:
+現在地周辺で、演奏しているバンドが分かるWebアプリ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 開発背景
+
+- チームメンバーにいるバンドマンが、知り合いや友達以外の人に対しての、集客に困っている
+  - 実際、コロナ化以降の音楽市場動向の低下している
+- お客さん側にも、ライブハウスに行くハードルが高い
+  - 日が合わない
+  - 場所が遠い
+  - 知りたいタイミングを逃す
+
+これらを解消し、音楽をより身近な経験にしたい
+
+## 機能
+
+- 現在地からの周囲の半径(m)と日付を選択
+- その条件に合致するバンド情報を表示
+- バンド情報を選択すると、以下が表示
+  - バンド情報(名前、ジャンル、写真、SNS)
+  - イベント情報(名前、開演・開場時間、料金)
+  - ライブハウス情報(名前、HP、Google Map)
+  - イベントに出演する他のバンド一覧
+
+## 使用技術
+
+- フロントエンド
+  - React
+  - JavaScript
+  - Chakra UI
+- 位置情報
+  - Geolocation API
+  - Google Maps API
+- バックエンド
+  - Go
+  - PostgreSQL
