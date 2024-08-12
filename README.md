@@ -41,3 +41,7 @@
 ## バックエンドリポジトリ
 
 [https://github.com/sekibuuun/WanderVive_back](https://github.com/sekibuuun/WanderVive_back)
+
+## スライド
+
+[Canva](https://www.canva.com/design/DAF_Eszy4kY/SAt3Iep-MUrBlriMT75Vaw/edit?utm_content=DAF_Eszy4kY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
